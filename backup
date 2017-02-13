@@ -1,0 +1,1 @@
+rsync -avzP --delete --exclude-from .rsync_exclude . /backup

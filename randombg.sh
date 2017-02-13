@@ -1,4 +1,10 @@
 #!/bin/sh
-wget http://lorempixel.com/`xwininfo -root | grep Width | sed -r 's/(.*: )([0-9]*)/\2/g'`/`xwininfo -root | grep Height | sed -r 's/(.*: )([0-9]*)/\2/g'` -O /tmp/bg.jpg
-feh --bg-center /tmp/bg.jpg
+error=1
+until test $error = 0;
+do
+    url=`curl http://www.splashbase.co/api/v1/images/random | jq -r .large_url`
+    wget $url -O /tmp/bg.jpg
+    error=$?
+done
+feh --bg-fill /tmp/bg.jpg
 rm /tmp/bg.jpg
