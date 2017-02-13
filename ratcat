@@ -1,0 +1,9 @@
+#!/bin/bash
+if (`test $2 -ge 1`) then let a=$2
+else let a=34
+fi
+ratpoison -c "msgwait 20"
+ratpoison -c "set font -*-fixed-*-*-*-*-"$a"-*-*-*-*-*-*-*"
+ratpoison -c "echo `cat $1`"
+ratpoison -c "set font -*-fixed-*-*-*-*-15-*-*-*-*-*-*-*"
+ratpoison -c "msgwait 5"

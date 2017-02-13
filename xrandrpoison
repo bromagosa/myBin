@@ -1,0 +1,2 @@
+xrandr --output VGA1 --rate 60 --left-of LVDS1 --rate 60
+ratpoison -c "frestore `cat ~/bin/xrandrlo`"
