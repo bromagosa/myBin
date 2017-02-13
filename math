@@ -1,0 +1,4 @@
+#!/bin/bash
+let a=`echo "$1" | bc`
+ratpoison -c "echo "$a""
+echo $a
